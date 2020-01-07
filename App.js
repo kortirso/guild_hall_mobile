@@ -1,36 +1,20 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, ScrollView, View, StatusBar, Text } from 'react-native';
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import store from './app/store'
+import AppContainer from './app/containers/AppContainer'
+import LocalStorage from './app/config/LocalStorage'
 
-const App: () => React$Node = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.scrollBox}>
-        <View style={styles.body}>
-          <Text style={styles.welcomeText}>Welcome To Guild Hall</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+store.subscribe(() => {
+  LocalStorage.saveState(store.getState())
+})
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  scrollBox: {
-    flex: 1,
-    backgroundColor: '#fff'
-  },
-  body: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff'
-  },
-  welcomeText: {
-    color: '#000',
-    fontSize: 20
+type Props = {}
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    )
   }
-});
-
-export default App;
+}

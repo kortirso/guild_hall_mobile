@@ -1,0 +1,1 @@
+export const LOAD_CREDENTIALS = 'LOAD_CREDENTIALS'
