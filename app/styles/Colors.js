@@ -12,6 +12,8 @@ const colors = {
   placeholder: '#CCC',
   simpleGray: '#EDEDED',
   lightetsGray: '#F7F7F7',
+  // colors
+  blue: '#1779ba',
   // empty
   transparent: 'transparent'
 }
