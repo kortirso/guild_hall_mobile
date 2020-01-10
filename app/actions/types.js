@@ -1,1 +1,2 @@
 export const LOAD_CREDENTIALS = 'LOAD_CREDENTIALS'
+export const SET_USER = 'SET_USER'

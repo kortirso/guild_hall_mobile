@@ -35,7 +35,7 @@ class Api {
   }
 
   static async xhr(route, params, token, verb) {
-    const host = 'http://127.0.0.1/api/v2/'
+    const host = 'http://127.0.0.1:5000/api/v2/'
     const url = `${host}${route}`
     let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null )
     options.headers = token == null ? Api.headers() : Api.headersWithToken(token)

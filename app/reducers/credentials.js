@@ -3,8 +3,7 @@ import * as types from '../actions/types'
 
 const INITIAL_STATE = {
   email: null,
-  password: '',
-  remember: false
+  password: ''
 }
 
 export const credentials = createReducer(INITIAL_STATE, {

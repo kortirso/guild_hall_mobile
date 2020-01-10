@@ -22,6 +22,7 @@ class AppContainer extends Component {
   }
 
   render() {
+    console.log(this.props.auth)
     return (
       <View style={styles.container}>
         <LoginNavigation />
@@ -42,6 +43,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
+    auth: state.auth
   }
 }
 
