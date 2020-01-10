@@ -14,6 +14,7 @@ const colors = {
   lightetsGray: '#F7F7F7',
   // colors
   blue: '#1779ba',
+  tintColor: '#ff0000',
   // empty
   transparent: 'transparent'
 }

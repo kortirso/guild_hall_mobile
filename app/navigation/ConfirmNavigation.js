@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
-import WelcomeScreen from '../screens/WelcomeScreen'
-import SignInScreen from '../screens/SignInScreen'
+import ConfirmScreen from '../screens/ConfirmScreen'
 import { Colors } from '../styles'
 
-const LoginStackNavigation = createStackNavigator(
+const ConfirmNavigation = createStackNavigator(
   {
-    Welcome: {
-      screen: WelcomeScreen
-    },
-    SignIn: {
-      screen: SignInScreen
+    Confirm: {
+      screen: ConfirmScreen
     }
   },
   {
@@ -22,9 +18,9 @@ const LoginStackNavigation = createStackNavigator(
   }
 )
 
-const AppContainer = createAppContainer(LoginStackNavigation)
+const AppContainer = createAppContainer(ConfirmNavigation)
 
-export default class LoginNavigator extends Component {
+export default class ConfirmNavigator extends Component {
   render() {
     return <AppContainer />
   }
