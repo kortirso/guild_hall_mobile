@@ -7,7 +7,7 @@ export function loginUser(params) {
       if (resp.errors === undefined) {
         dispatch(setUser(resp))
         return resp
-      } else console.log(resp)
+      } else dispatch(logOut())
     }).catch((error) => {
       console.log(error)
     })
@@ -16,7 +16,7 @@ export function loginUser(params) {
 
 export function logOut() {
   return (dispatch, getState) => {
-    dispatch(setUser({ accessToken: null, user: null, expiresAt: null }))
+    dispatch(setUser({ access_token: null, user: null, expires_at: null }))
   }
 }
 

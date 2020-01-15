@@ -44,6 +44,7 @@ class Api {
       return response
     })
     let responseJson = await response.json()
+    responseJson.status = response.status
     return responseJson
   }
 }
