@@ -16,7 +16,7 @@ export function loginUser(params) {
 
 export function logOut() {
   return (dispatch, getState) => {
-    dispatch(setUser(null))
+    dispatch(setUser({ accessToken: null, user: null, expiresAt: null }))
   }
 }
 

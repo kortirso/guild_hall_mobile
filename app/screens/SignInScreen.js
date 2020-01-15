@@ -85,7 +85,6 @@ class SignInScreen extends Component {
       }
       this.setState({ isProcessing: false })
     } catch (error) {
-      console.log(error)
       this.setState({ isProcessing: false })
     }
   }

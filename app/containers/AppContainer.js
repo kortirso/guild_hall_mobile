@@ -25,15 +25,15 @@ class AppContainer extends Component {
   }
 
   _setStore(result) {
-    if (isExist(result) && isExist(result.credentials) && isExist(result.credentials.email)) {
+    if (isExist(result)) {
       store.dispatch(this.props.setCredentials(result.credentials))
-      this.props.loginUser({email: result.credentials.email, password: result.credentials.password})
+      store.dispatch(this.props.setUser(result.auth))
     }
   }
 
   _renderScreen() {
     const auth = this.props.auth
-    if (isNotExist(auth) || isNotExist(auth.user)) return <LoginNavigation />
+    if (isNotExist(auth) || isNotExist(auth.access_token)) return <LoginNavigation />
     else {
       if (auth.user.confirmed) return <AppNavigation />
       else return <ConfirmNavigation />
@@ -41,7 +41,6 @@ class AppContainer extends Component {
   }
 
   render() {
-    console.log(this.props.auth)
     return (
       <View style={styles.container}>
         {this._renderScreen()}
@@ -61,6 +60,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return {
     auth: state.auth
   }
