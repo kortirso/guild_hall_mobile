@@ -3,7 +3,7 @@ import Api from '../lib/api'
 
 export function loginUser(params) {
   return (dispatch, getState) => {
-    return Api.post('user_token.json', params, null).then(resp => {
+    return Api.post('v2/user_token.json', params, null).then(resp => {
       if (resp.errors === undefined) {
         dispatch(setUser(resp))
         return resp
