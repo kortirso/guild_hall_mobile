@@ -1,6 +1,6 @@
 import React from 'react'
 import { TabBarBottom, createBottomTabNavigator } from 'react-navigation-tabs'
-import ActivitiesScreen from '../screens/ActivitiesScreen'
+import StackActivities from './StackActivities'
 import CharactersScreen from '../screens/CharactersScreen'
 import GuildsScreen from '../screens/GuildsScreen'
 import StaticsScreen from '../screens/StaticsScreen'
@@ -12,7 +12,7 @@ import { Colors, Fonts } from '../styles'
 export default createBottomTabNavigator(
   {
     Activities: {
-      screen: ActivitiesScreen
+      screen: StackActivities
     },
     Characters: {
       screen: CharactersScreen

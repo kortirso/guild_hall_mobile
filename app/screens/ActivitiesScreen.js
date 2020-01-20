@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, SafeAreaView, Text } from 'react-native'
+import { StyleSheet, View, SafeAreaView, Text, Modal, TouchableOpacity } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../actions'
 import { Kozizique } from '../lib/kozizique'
+import HeaderBlock from '../components/HeaderBlock'
 import { Colors, Fonts } from '../styles'
 
 class ActivitiesScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activities: props.activities
+      activities: props.activities,
+      modalVisible: false
     }
   }
 
@@ -45,14 +47,31 @@ class ActivitiesScreen extends Component {
     })
   }
 
+  _linkClick() {
+    this.setState({ modalVisible: false })
+    this.props.navigation.navigate('CloseEventsFeed')
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
+        <HeaderBlock withRight onRightPress={() => this.setState({ modalVisible: true })} text='Activities' />
         <View style={styles.containerBody}>
           <View style={styles.activities}>
             {this._renderActivities()}
           </View>
         </View>
+        <Modal animationType="fade" transparent={false} visible={this.state.modalVisible}>
+          <View style={styles.modal}>
+            <Text style={[styles.modalHeader, Fonts.regular]}>ACTIVITIES SECTION</Text>
+            <TouchableOpacity style={[styles.link, styles.activeLink]} activeOpacity={1}>
+              <Text style={[styles.modalLinkText, Fonts.regular]}>Activities</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this._linkClick()} style={styles.link} activeOpacity={1}>
+              <Text style={[styles.modalLinkText, Fonts.regular]}>The nearest events</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </SafeAreaView>
     )
   }
@@ -79,6 +98,23 @@ const styles = StyleSheet.create({
   activityText: {
     fontSize: 16,
     color: Colors.text
+  },
+  modal: {
+    paddingVertical: 40
+  },
+  modalHeader: {
+    padding: 20,
+    fontSize: 20
+  },
+  link: {
+    padding: 20,
+    textTransform: 'uppercase'
+  },
+  activeLink: {
+    backgroundColor: Colors.simpleGray
+  },
+  modalLinkText: {
+    fontSize: 16
   }
 })
 
