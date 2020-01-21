@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, SafeAreaView } from 'react-native'
+import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native'
 import { Colors } from '../styles'
 
 class ConfirmScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <View style={styles.containerBody}>
-        </View>
+        <ScrollView style={styles.containerBody}>
+        </ScrollView>
       </SafeAreaView>
     )
   }

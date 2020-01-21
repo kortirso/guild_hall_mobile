@@ -28,6 +28,7 @@ class AppContainer extends Component {
     if (isExist(result)) {
       store.dispatch(this.props.setCredentials(result.credentials))
       store.dispatch(this.props.setActivities(result.activities))
+      store.dispatch(this.props.setCharacters(result.characters))
       store.dispatch(this.props.setUser(result.auth))
     }
   }

@@ -13,6 +13,15 @@ const icons = {
   searchFocused: require('../assets/icons/navigation/search-focused.png'),
   settings: require('../assets/icons/navigation/settings.png'),
   settingsFocused: require('../assets/icons/navigation/settings-focused.png'),
+  druid: require('../assets/icons/classes/druid_ico.png'),
+  hunter: require('../assets/icons/classes/hunter_ico.png'),
+  mage: require('../assets/icons/classes/mage_ico.png'),
+  paladin: require('../assets/icons/classes/paladin_ico.png'),
+  priest: require('../assets/icons/classes/priest_ico.png'),
+  rogue: require('../assets/icons/classes/rogue_ico.png'),
+  shaman: require('../assets/icons/classes/shaman_ico.png'),
+  warlock: require('../assets/icons/classes/warlock_ico.png'),
+  warrior: require('../assets/icons/classes/warrior_ico.png')
 }
 
 export default icons

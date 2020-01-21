@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, SafeAreaView, Text, Modal, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, SafeAreaView, Text, Modal, TouchableOpacity, ScrollView } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../actions'
@@ -56,11 +56,11 @@ class ActivitiesScreen extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <HeaderBlock withRight onRightPress={() => this.setState({ modalVisible: true })} text='Activities' />
-        <View style={styles.containerBody}>
+        <ScrollView style={styles.containerBody}>
           <View style={styles.activities}>
             {this._renderActivities()}
           </View>
-        </View>
+        </ScrollView>
         <Modal animationType="fade" transparent={false} visible={this.state.modalVisible}>
           <View style={styles.modal}>
             <Text style={[styles.modalHeader, Fonts.regular]}>ACTIVITIES SECTION</Text>

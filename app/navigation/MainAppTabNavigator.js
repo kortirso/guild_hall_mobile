@@ -1,7 +1,7 @@
 import React from 'react'
 import { TabBarBottom, createBottomTabNavigator } from 'react-navigation-tabs'
 import StackActivities from './StackActivities'
-import CharactersScreen from '../screens/CharactersScreen'
+import StackCharacters from './StackCharacters'
 import GuildsScreen from '../screens/GuildsScreen'
 import StaticsScreen from '../screens/StaticsScreen'
 import EventsScreen from '../screens/EventsScreen'
@@ -15,7 +15,7 @@ export default createBottomTabNavigator(
       screen: StackActivities
     },
     Characters: {
-      screen: CharactersScreen
+      screen: StackCharacters
     },
     Guilds: {
       screen: GuildsScreen
