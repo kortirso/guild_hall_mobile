@@ -34,7 +34,10 @@ class CharactersScreen extends Component {
   }
 
   _renderCharacters() {
-    return this.state.characters.map((character) => {
+    const characters = this.state.characters.sort((a, b) => {
+      return b.attributes.level - a.attributes.level
+    })
+    return characters.map((character) => {
       return (
         <View style={styles.character} key={character.id}>
           <View style={styles.characterIconBlock}>
@@ -79,7 +82,9 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: Colors.white
   },
-  characters: {},
+  characters: {
+    paddingBottom: 20
+  },
   character: {
     marginBottom: 30,
     flexDirection: 'row'

@@ -86,9 +86,11 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: Colors.white
   },
-  activities: {},
+  activities: {
+    paddingBottom: 20
+  },
   activity: {
-    marginBottom: 10
+    marginBottom: 20
   },
   activityTitle: {
     fontSize: 18,
@@ -107,8 +109,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   link: {
-    padding: 20,
-    textTransform: 'uppercase'
+    padding: 20
   },
   activeLink: {
     backgroundColor: Colors.simpleGray
